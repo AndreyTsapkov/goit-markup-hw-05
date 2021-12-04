@@ -14,7 +14,7 @@
 }
 /* -------------GLOBAL STYLES------------- */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #fff;
   color: var(--main-text-color);
   font-size: 14px;
@@ -102,13 +102,13 @@ img {
   position: relative;
 }
 .current::after {
-  content: '';
+  content: "";
   display: block;
   background-color: var(--accent-text-color);
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  bottom: 0;
+  bottom: -1px;
   position: absolute;
 }
 .contacts {
@@ -155,7 +155,7 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -179,7 +179,10 @@ img {
   margin: 0 auto;
   text-align: center;
 
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
     url(../images/hero-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -556,7 +559,8 @@ img {
   overflow: hidden;
 }
 
-.our-projects-item:hover .our-projects-text-top {
+.our-projects-item:hover .our-projects-text-top,
+.our-projects-item:focus .our-projects-text-top {
   transform: translateY(0);
 }
 
@@ -567,12 +571,13 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
-  transition: opacity 500ms, visibility 500ms;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
   transform: translate(1200px) scale(2);
-  transition: transform 500ms;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -586,7 +591,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 500ms;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close {
   width: 30px;
